@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{{ url_for('static', filename='1.png') }}" type="image/x-icon">
+  <title>Easy DataScience</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Add your theme styles here */
+    body {
+      background-color: #FFA500;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: #964B00;
+      color: #fff;
+    }
+    .footer {
+      background-color: #964B00;
+      color: #fff;
+      text-align: center;
+    }
+
+
+    .header-buttons {
+      display: flex;
+      justify-content: flex-end; /* Align buttons to the right */
+      margin-top: 20px;
+    }
+
+    .header-buttons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      background-color: #964B00;
+    }
+
+    .header-buttons a:hover {
+      background-color: #fff;
+      color: #964B00;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #222;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group label {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .form-control {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .btn-primary {
+      background-color: #964B00;
+      border-color: #964B00;
+    }
+
+    .btn-primary:hover {
+      background-color: #964B00;
+      border-color: #964B00;
+    }
+
+    /* Media query for small screens */
+    @media (max-width: 768px) {
+      .content-section {
+        flex-direction: column;
+      }
+      .content-section img {
+        max-width: 100%;
+        float: none; /* Reset float for small screens */
+      }
+    }
+    .footer {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    body {
+    background-color: #333;
+    color: #FFA500;
+    min-height: 100vh;
+    display: flex;
+      flex-direction: column;
+  }
+  .navbar {
+      background-color: #964B00;
+      border-color: #964B00;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #fff;
+    }
+    .nav-link {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    button:focus {
+    outline: 1px dotted;
+    outline: none !important;
+}
+
+
+a.nav-link:hover,  a.navbar-brand:hover{
+          color:#333;
+    }
+    body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    margin-top: auto;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="mainpage.html">Easy DataScience</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="{{url_for('static', filename='toggle.png')}}" alt="" height="50px">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        
+        <li class="nav-item active">
+          <a class="nav-link" href="mainpage.html">Home</a>
+        </li>
+       
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>User Registration</h2>
+  
+    {% if registered %}
+      <div class="alert alert-success" role="alert">
+        Registration successful! You can now the part of our team, you will shortly be contacted.
+      </div>
+    {% endif %}
+  
+    <form action="{{ url_for('process_register') }}" method="post">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+  </div>
+  
+
+  <footer class="footer">
+    <p>&copy; 2023 Easy DataScience. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

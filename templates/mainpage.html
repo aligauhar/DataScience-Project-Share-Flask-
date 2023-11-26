@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{{ url_for('static', filename='1.png') }}" type="image/x-icon">
+  <title>Easy DataScience</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    /* Add your theme styles here */
+    body {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .footer {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .header-buttons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+    }
+
+    .header-buttons a:hover {
+      background-color: #964B00;
+    }
+
+    .content-section {
+      display: flex;
+      align-items: center;
+      padding: 50px 0;
+      text-align: left;
+    }
+
+    .content-section img {
+      max-width: 50%;
+      margin: 0 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .content-section-text {
+      flex: 1;
+    }
+
+    .content-section-text h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* Media query for small screens */
+    @media (max-width: 768px) {
+      .content-section {
+        flex-direction: column;
+      }
+      .content-section img {
+        max-width: 100%;
+      }
+    }
+    .navbar {
+      background-color: #964B00;
+      border-color: #964B00;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #fff;
+    }
+    .nav-link {
+      font-weight: bold;
+      color: #fff;
+    }
+    a.nav-link:hover,  a.navbar-brand:hover{
+      color:#333;
+    }
+   
+    .content-section {
+      color:white;
+    }
+    button:focus {
+    outline: 1px dotted;
+    outline: none !important;
+}
+p {
+    padding: 10px;
+}
+
+
+.content-section-text h2{
+  padding-top: 30px;
+}
+
+@media (max-width: 976px) {
+  .rvc {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 768px) {
+  .content-section-text {
+    text-align: center;
+}
+}
+.container a{
+  color:#fff0 !important;
+}
+.content-section-text {
+            position: relative;
+            overflow: hidden;
+            margin: 20px;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 20px;
+            background-color: rgb(120, 60, 0);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            overflow-wrap:break-word ;
+            border: 2px solid white;
+      
+        }
+
+        .content-section-text:hover .hover-text {
+            opacity: 1;
+            
+        }
+
+
+        .social-box {
+      position: fixed;
+      left: 10px;
+      top: 70%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .social-link {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .social-link img {
+      width: 50px;
+      transition: transform 0.3s;
+    }
+
+    .social-link:hover {
+      color: #964B00;
+    }
+
+    .social-link:hover img {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 1024px) {
+      .social-box {
+        left: 5px;
+      }
+    }
+
+
+    h1.text-center{
+      color: #FFA500 !important;
+    }
+
+
+a.nav-link {
+    text-align: end;
+    padding-right: 17px !important;
+}
+
+  </style>
+  <script>
+
+
+  $(document).ready(function () {
+      $(".content-section-text").mousemove(function (e) {
+          var hoverText = $(this).find(".hover-text");
+          var textWidth = hoverText.width();
+          var textHeight = hoverText.height();
+          var mouseX = e.pageX - $(this).offset().left;
+          var mouseY = e.pageY - $(this).offset().top;
+
+          // Calculate the position of the hover text
+          var posX = mouseX + textWidth / 1.5;
+          var posY = mouseY - textHeight / 1.2;
+
+          // Update the position of the hover text
+          hoverText.css({
+              left: posX,
+              top: posY
+          });
+      });
+  });
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="">Easy DataScience</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="{{url_for('static', filename='toggle.png')}}" alt="" height="50px">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      <li class="nav-item active">
+          <a class="nav-link" href="register.html">Register</a>
+        </li>
+        
+        <li class="nav-item active">
+          <a class="nav-link" href="project.html">Project</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="model.html">Models</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="social-box">
+    <a href="https://www.linkedin.com/in/ali-gauhar-ab29341b7/" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='linkedin.png')}}" alt="LinkedIn">
+    </a>
+    <a href="https://www.instagram.com/aligauharcb/" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='instagram.png')}}" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/AliGauharCB/" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='facebook.png')}}" alt="Facebook">
+    </a>
+    <a href="https://github.com/aligauhar/" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='github.png')}}" alt="GitHub">
+    </a>
+    <a href="https://wa.me/+923212239044" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='whatsapp.png')}}" alt="WhatsApp">
+    </a>
+  </div>
+
+  <div class="container mt-4" >
+    <h1 class="text-center">Welcome to Easy DataScience</h1>
+  </div>
+  <div class="container mt-4" id="intiative">
+    <div class="content-section  rvc">
+      <div class="content-section-text">
+       
+        <h2>Initiative Overview</h2>
+        <p>Welcome to Easy DataScience – a dynamic platform dedicated to hosting data science templates, model implementations, and collaborative projects. At its nascent stage, this initiative thrives on community contributions, aiming to evolve into a rich resource for data enthusiasts worldwide.
+
+          Our primary goal is to automate and simplify the intricate processes of data science, catering to individuals at every skill level. Whether you're a novice or an experienced professional, Easy DataScience is here to make your daily tasks seamless and your projects more efficient.
+          
+          Imagine a space where your ideas can contribute to the growth of a thriving community. As we pave the way for automation, our platform becomes a playground for both beginners and seasoned practitioners, fostering an environment of continuous learning and innovation.
+          
+          Join us on this exciting journey to simplify data science, enhance collaboration, 
+          and empower individuals in their data-driven endeavors. Easy DataScience is more 
+          than a platform; it's an invitation to be a part of a growing ecosystem where your
+           contributions matter. Welcome aboard 
+          Easy DataScience – where automation meets creativity and knowledge thrives!
+</p>
+      </div>
+      <img src= "{{url_for('static', filename='1.png')}}"  alt="Image 2" width="350px" >
+    </div>
+
+  <a href="https://github.com/aligauhar/Exploratory-Data-Analysis/blob/main/Exploratory%20Data%20Analysis.ipynb" target="_blank">
+    <div class="content-section" style="background-color: #222;">
+    <img src="{{url_for('static', filename='2.png')}}" alt="Image 2">  
+    <div class="content-section-text"  >
+      <div class="hover-text">Let's check it out!</div>
+        <h2>Exploratory Data Analysis</h2>
+        <p>
+          Introducing our Exploratory Data Analysis (EDA) template – your go-to tool for simplifying and automating model analysis. In its early stages, this template streamlines your daily data tasks effortlessly.
+          
+          Designed for both beginners and experts, our goal is to provide a user-friendly solution that accelerates the exploratory data analysis process. Imagine a tool that enhances accuracy and efficiency, evolving with your contributions to become an indispensable asset.
+          
+          Join us on this journey to simplify and automate your data analysis tasks. For a hands-on experience, download the IPython Notebook (ipynb) file now. Welcome to the future of effortless data analysis!
+          
+          
+          </p>
+      </div>
+      
+    </div>
+  </a>
+<a href="https://github.com/aligauhar/Feature-Engineering-/blob/main/Feature%20Engineering.ipynb" target="_blank">
+    <div class="content-section rvc">
+      <div class="content-section-text">
+        <div class="hover-text">Let's check it out!</div>
+        <h2>Feature Engineering</h2>
+        <p>Welcome to our Feature Engineering template – a powerful solution to simplify and automate the feature engineering process for any model. In its early stages, this template is crafted to make your daily feature engineering tasks seamless and efficient.
+
+          Suitable for both beginners and experts, our goal is to offer a user-friendly tool that accelerates the feature engineering workflow. Imagine a tool that not only streamlines the process but also evolves with your contributions, becoming an essential resource.
+          
+          Embark on this journey to simplify and automate your feature engineering tasks. For a hands-on experience, download the IPython Notebook (ipynb) file now. Welcome to a future where feature engineering is effortlessly enhanced!
+        </p>
+      </div>
+      <img src="{{url_for('static', filename='3.png')}}" alt="Image 3">
+    </div>
+  </a>
+  <a href="https://github.com/aligauhar/Model-Selection-Helper-Expert-System/blob/main/Model%20Selection.ipynb" target="_blank">
+    <div class="content-section" style="background-color: #222; padding-right:10px; ">
+    <img src="{{url_for('static', filename='4.png')}}" alt="Image 4" width="350px" >  
+    <div class="content-section-text">
+      <div class="hover-text">Let's check it out!</div>
+        <h2>Model identification</h2>
+        <p>
+          Welcome to our Automated Model Identification template – a revolutionary tool designed to identify the most suitable model for your dataset automatically. In its early stages, this template streamlines the model selection process based on your responses, making your daily tasks in identifying models quick and efficient.
+          
+          Tailored for both beginners and experts, our goal is to provide an intuitive solution that guides users in selecting the optimal model for their specific datasets. Imagine a tool that adapts and evolves with user input, becoming an invaluable resource for model identification.
+          
+          Join us on this groundbreaking journey to simplify and automate the model identification process. For a personalized experience, download the IPython Notebook (ipynb) file now. Welcome to a future where identifying the right model is effortlessly enhanced!
+          </p>
+      </div>
+      
+    </div>
+  </a>
+  <a href="model.html" target="_blank">
+    <div class="content-section rvc" id="models" >
+      <div class="content-section-text">
+        <div class="hover-text">Let's check it out!</div>
+        <h2>Model building and Evaluation</h2>
+        <p>
+          Welcome to our Model Building and Evaluation template – a comprehensive solution for implementing and evaluating different models effortlessly. In its initial stage, this template simplifies the process of building and assessing various models, making your tasks in model development seamless.
+          
+          Designed for both beginners and experts, our goal is to offer a user-friendly tool that accelerates the model building and evaluation workflow. Imagine a versatile platform that not only streamlines the implementation of diverse models but also provides an efficient evaluation process.
+          
+          Embark on this journey to simplify and enhance your model building and evaluation tasks. For hands-on experience, download the IPython Notebook (ipynb) file now. Welcome to a future where model development and evaluation are seamlessly integrated!
+        </p>
+       </div>
+      <img src="{{url_for('static', filename='5.png')}}"alt="Image 5">
+    </div>
+  </a>
+  <a href="project.html" target="_blank">
+    <div class="content-section" style="background-color: #222; " id="project">
+    <img src="{{url_for('static', filename='6.png')}}" alt="Image 6"  width="350px" >  
+    <div class="content-section-text ">
+      <div class="hover-text">Let's check it out!</div>
+        <h2>Real-Time Projects</h2>
+        <p>Welcome to our Real-Time Projects and Model Building template – a comprehensive solution that combines the implementation of various models with real-time project scenarios. In its early stages, this template not only simplifies the process of building and evaluating models but also integrates them into real-world projects, making your tasks in model development and application seamless.
+
+          Catering to both beginners and experts, our goal is to provide a versatile tool that accelerates the model building and evaluation workflow within the context of real-time projects. Imagine a platform that not only guides you through model implementation and evaluation but also showcases their application in practical scenarios.
+          
+          Embark on this journey to simplify and enhance your model building, evaluation, and real-time project integration tasks. For hands-on experience, download the IPython Notebook (ipynb) file now. Welcome to a future where model development meets real-world applications effortlessly!
+        </p>
+        </div>
+      
+    </div>
+  </div>
+</a>
+  <footer class="footer mt-4">
+    <p>&copy; 2023 Easy DataScience. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
