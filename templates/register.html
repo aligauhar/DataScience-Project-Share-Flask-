@@ -134,8 +134,21 @@ a.nav-link:hover,  a.navbar-brand:hover{
 footer{
     margin-top: auto;
 }
-
+.btn-primary.focus, .btn-primary:focus {
+    color: rgb(232, 230, 227) !important ;
+    background-color: rgb(120 60 0) !important;
+    border-color: rgb(120 60 0) !important;
+    box-shadow: rgb(120 60 0) 0px 0px 0px 0.2rem !important;
+}
   </style>
+    <script>
+      setTimeout(function() {
+        var alertDiv = document.getElementById('success-alert');
+        if (alertDiv) {
+          alertDiv.remove();
+        }
+      }, 5000);
+    </script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -158,11 +171,11 @@ footer{
   </nav>
   <div class="container">
     <h2>User Registration</h2>
-  
+
     {% if registered %}
-      <div class="alert alert-success" role="alert">
-        Registration successful! You can now the part of our team, you will shortly be contacted.
-      </div>
+    <div id="success-alert" class="alert alert-success" role="alert">
+      Registration successful! You can now the part of our team, you will shortly be contacted.
+    </div>
     {% endif %}
   
     <form action="{{ url_for('process_register') }}" method="post">
