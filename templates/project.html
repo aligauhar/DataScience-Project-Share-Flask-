@@ -1,0 +1,39 @@
+{% extends "tamplet.html" %}
+{% block cssfiles %}
+<link rel="stylesheet" href="../static/css/project.css">
+{% endblock %}
+{% block pageContent %} 
+
+  <div class="container mt-4">
+    
+    {% if 'email' in session %}
+    <h2>Project List</h2>
+    <a style="text-decoration: none; color: white !important;" href="{{ url_for('add_model') }}"><button style="margin-bottom: 10px; max-width: 165px; text-decoration: none;"  type="submit" class="btn btn-primary btn-block">Add Project</button></a>
+    {%else%}
+    <h2>Project List (Login to Make your contribution)</h2>
+    {% endif %}
+    <div class="cnx">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Go to file</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr>
+            <td>{{ product.Name }}</td>
+            <td>{{ product.Discription }}</td>
+            <td>{{ product.Category }}</td>
+            <td><a href="{{ product.Go_to_File }}" target="_blank"> Check it Out</a> </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock %}
+ 
