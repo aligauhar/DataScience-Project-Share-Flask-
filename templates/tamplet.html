@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{{ url_for('static', filename='1.png') }}" type="image/x-icon">
+  <title>DS Templates</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="../static/css/mainpage.css">
+<!-- main page hover script -->
+{% block mainPageHover %} {% endblock %}
+{% block sesion %} {% endblock %}
+</head>
+{% block cssfiles %} {% endblock %}
+<body>
+  <style>
+    @media (max-width: 990px) {
+    div#navbarTogglerDemo01 p {
+        display: none !important;
+    }
+}
+
+    
+  </style>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="">DS-Template</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="{{url_for('static', filename='toggle.png')}}" alt="" height="50px">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        {% if 'email' in session %}
+        <p>Welcome, {{ session['email'] }}!</p>
+        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+          {% endif %}
+      <li class="nav-item active">
+        <li class="nav-item active">
+            <a class="nav-link" href="mainpage.html">Home</a>
+          </li>
+          {% if 'email' not in session  %}
+          <li class="nav-item active">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          {% endif %}
+
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        {% if 'email' not in session  %}
+      <li class="nav-item active">
+          <a class="nav-link" href="register.html">Register</a>
+        </li>
+        {% endif %}
+        <li class="nav-item active">
+          <a class="nav-link" href="project.html">Project</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="model.html">Models</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- page content -->
+  {% block pageContent %} 
+  {% endblock %}
+  <footer class="footer mt-4">
+    <p>&copy; 2024 DS-Templates. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

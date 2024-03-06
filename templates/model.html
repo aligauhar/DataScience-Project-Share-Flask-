@@ -1,0 +1,40 @@
+{% extends "tamplet.html" %}
+{% block cssfiles %}
+<link rel="stylesheet" href="../static/css/model.css">
+{% endblock %}
+{% block pageContent %} 
+  <div class="container mt-4">
+    {% if message %}
+      <div class="alert alert-success" role="danger">
+        Logged in successfull </div>
+    {% endif %}
+    {% if saved %}
+    <div class="alert alert-success" role="danger">
+      Thanks for contribution </div>
+  {% endif %}
+    <h2>Models List</h2>
+    <div class="cnx">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Go to file</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr>
+            <td>{{ product.Name }}</td>
+            <td>{{ product.Discription }}</td>
+            <td>{{ product.Category }}</td>
+            <td><a href=" {{product.Go_to_File}} " target="_blank"> Check it Out</a> </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="../static/js/register.js"></script>
+  {% endblock %}

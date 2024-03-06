@@ -1,0 +1,142 @@
+{% extends "tamplet.html" %}
+<!-- main page hover script -->
+{% block mainPageHover %}
+<script src="../static/js/mainpage.js"></script>
+  <script>
+ 
+</script>
+{% endblock %}
+{% block pageContent %} 
+<!-- page content -->
+<style>
+  h1.text-center {
+    margin-top: 100px!important;
+}
+</style>
+  <div class="social-box">
+    <a href="https://www.linkedin.com/in/ali-gauhar-ab29341b7/" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='linkedin.png')}}" alt="LinkedIn">
+    </a>
+    <a href="https://www.instagram.com/aligauharcb/" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='instagram.png')}}" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/AliGauharCB/" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='facebook.png')}}" alt="Facebook">
+    </a>
+    <a href="https://github.com/aligauhar/" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='github.png')}}" alt="GitHub">
+    </a>
+    <a href="https://wa.me/+923212239044" class="social-link" target="_blank">
+      <img src="{{url_for('static', filename='whatsapp.png')}}" alt="WhatsApp">
+    </a>
+  </div>
+
+  <div class="container mt-4" >
+    <h1 class="text-center">DataScience Template and Project sharing</h1>
+  </div>
+  <div class="container mt-4" id="intiative">
+    <div class="content-section  rvc">
+      <div class="content-section-text">
+       
+        <h2>Initiative Overview</h2>
+        <p>Welcome to Easy DataScience – a dynamic platform dedicated to hosting data science templates, model implementations, and collaborative projects. At its nascent stage, this initiative thrives on community contributions, aiming to evolve into a rich resource for data enthusiasts worldwide.
+
+          Our primary goal is to automate and simplify the intricate processes of data science, catering to individuals at every skill level. Whether you're a novice or an experienced professional, Easy DataScience is here to make your daily tasks seamless and your projects more efficient.
+          
+          Imagine a space where your ideas can contribute to the growth of a thriving community. As we pave the way for automation, our platform becomes a playground for both beginners and seasoned practitioners, fostering an environment of continuous learning and innovation.
+          
+          Join us on this exciting journey to simplify data science, enhance collaboration, 
+          and empower individuals in their data-driven endeavors. Easy DataScience is more 
+          than a platform; it's an invitation to be a part of a growing ecosystem where your
+           contributions matter. Welcome aboard 
+          Easy DataScience – where automation meets creativity and knowledge thrives!
+</p>
+      </div>
+      <img src= "{{url_for('static', filename='1.png')}}"  alt="Image 2" width="350px" >
+    </div>
+
+  <a href="https://github.com/aligauhar/Exploratory-Data-Analysis/blob/main/Exploratory%20Data%20Analysis.ipynb" target="_blank">
+    <div class="content-section" style="background-color: #222;">
+    <img src="{{url_for('static', filename='2.png')}}" alt="Image 2">  
+    <div class="content-section-text"  >
+      <div class="hover-text">Let's check it out!</div>
+        <h2>Exploratory Data Analysis</h2>
+        <p>
+          Introducing our Exploratory Data Analysis (EDA) template – your go-to tool for simplifying and automating model analysis. In its early stages, this template streamlines your daily data tasks effortlessly.
+          
+          Designed for both beginners and experts, our goal is to provide a user-friendly solution that accelerates the exploratory data analysis process. Imagine a tool that enhances accuracy and efficiency, evolving with your contributions to become an indispensable asset.
+          
+          Join us on this journey to simplify and automate your data analysis tasks. For a hands-on experience, download the IPython Notebook (ipynb) file now. Welcome to the future of effortless data analysis!
+          
+          
+          </p>
+      </div>
+      
+    </div>
+  </a>
+<a href="https://github.com/aligauhar/Feature-Engineering-/blob/main/Feature%20Engineering.ipynb" target="_blank">
+    <div class="content-section rvc">
+      <div class="content-section-text">
+        <div class="hover-text">Let's check it out!</div>
+        <h2>Feature Engineering</h2>
+        <p>Welcome to our Feature Engineering template – a powerful solution to simplify and automate the feature engineering process for any model. In its early stages, this template is crafted to make your daily feature engineering tasks seamless and efficient.
+
+          Suitable for both beginners and experts, our goal is to offer a user-friendly tool that accelerates the feature engineering workflow. Imagine a tool that not only streamlines the process but also evolves with your contributions, becoming an essential resource.
+          
+          Embark on this journey to simplify and automate your feature engineering tasks. For a hands-on experience, download the IPython Notebook (ipynb) file now. Welcome to a future where feature engineering is effortlessly enhanced!
+        </p>
+      </div>
+      <img src="{{url_for('static', filename='3.png')}}" alt="Image 3">
+    </div>
+  </a>
+  <a href="https://github.com/aligauhar/Model-Selection-Helper-Expert-System/blob/main/Model%20Selection.ipynb" target="_blank">
+    <div class="content-section" style="background-color: #222; padding-right:10px; ">
+    <img src="{{url_for('static', filename='4.png')}}" alt="Image 4" width="350px" >  
+    <div class="content-section-text">
+      <div class="hover-text">Let's check it out!</div>
+        <h2>Model identification</h2>
+        <p>
+          Welcome to our Automated Model Identification template – a revolutionary tool designed to identify the most suitable model for your dataset automatically. In its early stages, this template streamlines the model selection process based on your responses, making your daily tasks in identifying models quick and efficient.
+          
+          Tailored for both beginners and experts, our goal is to provide an intuitive solution that guides users in selecting the optimal model for their specific datasets. Imagine a tool that adapts and evolves with user input, becoming an invaluable resource for model identification.
+          
+          Join us on this groundbreaking journey to simplify and automate the model identification process. For a personalized experience, download the IPython Notebook (ipynb) file now. Welcome to a future where identifying the right model is effortlessly enhanced!
+          </p>
+      </div>
+      
+    </div>
+  </a>
+  <a href="model.html" target="_blank">
+    <div class="content-section rvc" id="models" >
+      <div class="content-section-text">
+        <div class="hover-text">Let's check it out!</div>
+        <h2>Model building and Evaluation</h2>
+        <p>
+          Welcome to our Model Building and Evaluation template – a comprehensive solution for implementing and evaluating different models effortlessly. In its initial stage, this template simplifies the process of building and assessing various models, making your tasks in model development seamless.
+          
+          Designed for both beginners and experts, our goal is to offer a user-friendly tool that accelerates the model building and evaluation workflow. Imagine a versatile platform that not only streamlines the implementation of diverse models but also provides an efficient evaluation process.
+          
+          Embark on this journey to simplify and enhance your model building and evaluation tasks. For hands-on experience, download the IPython Notebook (ipynb) file now. Welcome to a future where model development and evaluation are seamlessly integrated!
+        </p>
+       </div>
+      <img src="{{url_for('static', filename='5.png')}}"alt="Image 5">
+    </div>
+  </a>
+  <a href="project.html" target="_blank">
+    <div class="content-section" style="background-color: #222; " id="project">
+    <img src="{{url_for('static', filename='6.png')}}" alt="Image 6"  width="350px" >  
+    <div class="content-section-text ">
+      <div class="hover-text">Let's check it out!</div>
+        <h2>Real-Time Projects</h2>
+        <p>Welcome to our Real-Time Projects and Model Building template – a comprehensive solution that combines the implementation of various models with real-time project scenarios. In its early stages, this template not only simplifies the process of building and evaluating models but also integrates them into real-world projects, making your tasks in model development and application seamless.
+
+          Catering to both beginners and experts, our goal is to provide a versatile tool that accelerates the model building and evaluation workflow within the context of real-time projects. Imagine a platform that not only guides you through model implementation and evaluation but also showcases their application in practical scenarios.
+          
+          Embark on this journey to simplify and enhance your model building, evaluation, and real-time project integration tasks. For hands-on experience, download the IPython Notebook (ipynb) file now. Welcome to a future where model development meets real-world applications effortlessly!
+        </p>
+        </div>
+      
+    </div>
+  </div>
+</a>
+{% endblock %}

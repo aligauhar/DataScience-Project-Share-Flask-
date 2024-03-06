@@ -1,0 +1,28 @@
+{% extends "tamplet.html" %}
+{% block cssfiles %}
+<link rel="stylesheet" href="../static/css/login.css">
+{% endblock %}
+{% block pageContent %} 
+  <div class="container">
+    <h2>User Login</h2>
+  
+    {% if error_message %}
+      <div class="alert alert-danger" role="danger">
+        Id or password is incorrect   </div>
+    {% endif %}
+  
+    <form action="{{ url_for('login_form') }}" method="post">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+  </div>
+  <script src="../static/js/login.js"></script>
+  {% endblock %}
+
